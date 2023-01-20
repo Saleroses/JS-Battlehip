@@ -6,6 +6,17 @@ let guess;
 let hits = 0;
 let guesses = 0;
 let isSunk = false;
+function repeatedShot (guess) {
+	if (guess == location1) {
+		location1 = null;
+	}
+	if (guess == location2) {
+		location2 = null;
+	}
+	if (guess == location3) {
+		location3 = null;
+	}
+}
 
 while (isSunk == false) {
 	guess = prompt ("Ready? Go! (введи цифру 0-6):");
@@ -16,15 +27,7 @@ while (isSunk == false) {
 		if (guess== location1||guess== location2||guess== location3) {
 			alert("Есть пробитие!");
 			hits = hits+1;
-			if (guess == location1) {
-				location1 = null;
-			}
-			if (guess == location2) {
-				location2 = null;
-			}
-			if (guess == location3) {
-				location3 = null;
-			}
+			repeatedShot(guess)
 				if (hits == 3) {
 					isSunk = true;
 					alert ("Ты потопил(а) мой корабль!");
