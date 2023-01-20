@@ -12,15 +12,17 @@ while (isSunk == false) {
 		alert("Введи правильную цифру!");
 	} else {
 		guesses = guesses+1;
-
-		if (guess== location1||guess== location2||guess== location3){
+		if (guess== location1||guess== location2||guess== location3) {
+			alert("Есть пробитие!");
 			hits = hits+1;
 			if (hits == 3) {
 				isSunk = true;
 				alert ("Ты потопил(а) мой корабль!");
 			}
+		} else {
+			alert("Мимо)!");
 		}
 	}
 }
-let stats = "Ты сделал(а) " + guesses + "попыток, " + "точность составила " + (3/guesses);
+let stats = "Ты сделал(а) " + guesses + " попыток, " + "точность составила " + (3/guesses);
 alert(stats);
